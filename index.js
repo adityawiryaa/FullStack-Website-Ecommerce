@@ -14,6 +14,7 @@ app.use('/uploadsProduct', express.static('uploadsProduct'));
 app.use(bodyParser.json())
 app.use(router)
 app.use(express.json());
-app.listen(port, () => {
+const server = app.listen(port, () => {
+    const port = server.address().port;
     console.log(`App Run on http://localhost:${port}`)
-})
+});
